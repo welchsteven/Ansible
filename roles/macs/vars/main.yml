@@ -1,0 +1,22 @@
+---
+#mas_apps.yml
+
+mas_email: "welchsteven@icloud.com"
+mas_password: ""
+mas_upgrade_all_apps: true
+mas_signin_dialog: true
+mas_installed_apps:
+- { id: 425264550, name: "Blackmagic Disk Speed Test (3.0)" }
+- {id: 803453959, name: "Slack"}
+- {id: 1176895641, name: "Spark – Email App by Readdle"}
+- {id: 497799835, name: "Xcode"}
+# sudo xcodebuild -license accept
+- {id: 1333542190, name: "1Password"}
+- {id: 462054704, name: "Microsoft Word"}
+- {id: 784801555, name: "Microsoft OneNote"}
+- {id: 462058435, name: "Microsoft Excel"}
+- {id: 462062816, name: "Microsoft PowerPoint"}
+- {id: 1176895641, name: "Spark Mail"}
+- {id: 1287445660, name: "Agenda"}
+- {id: 823766827, name: "Microsoft OneDrive"}
+

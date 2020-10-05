@@ -1,0 +1,81 @@
+#!/usr/bin/env ansible-playbook
+# tasks to complete before running roles
+---
+- hosts: localhost 
+  roles:
+    - macs
+    - base
+
+
+# - role: geerlingguy.mas
+#   when: mas_installed_apps
+#   tags: ['mas']
+# - hosts: localhost
+#   connection: local
+#   roles:
+#   - macs  
+
+
+#     - role: geerlingguy.homebrew
+#       tags: ['homebrew']
+#     - role: geerlingguy.dotfiles
+#       when: configure_dotfiles
+#       tags: ['dotfiles']
+#     - role: geerlingguy.mas
+#       when: mas_installed_apps
+#       tags: ['mas']
+# - hosts: all
+#   tags: always
+#   pre_tasks: 
+#     - name: pre-run | update package cache (debian, etc)
+#       tags: always
+#       apt: update_cache=yes
+#       changed_when: False
+#       when: ansible_distribution in ["Debian", "Ubuntu"]
+
+# # run roles
+# - hosts: all
+#   tags: base
+#   become: true
+#   roles:
+#     - base
+
+# - hosts: workstation
+#   tags: workstation
+#   become: true
+#   roles:
+#     - workstation
+
+# - hosts: macs
+#   tags: macs
+#   become: true
+#   roles:
+#   - macs
+
+# - hosts: rpi
+#   tags: pi,rpi
+#   become: true
+#   roles:
+#     - rpi
+#     - server
+
+# - hosts: server
+#   tags: server
+#   become: true
+#   roles:
+#     - server
+
+# # end of run cleanup and reporting
+# - hosts: all
+#   become: true
+#   tasks: 
+#   - name: cleanup package cache (debian and ubuntu)
+#     tags: always
+#     apt: 
+#         autoclean: yes
+#     when: ansible_distribution in ["Debian", "Ubuntu"]
+#             "ansible_os_family": "Darwin",
+
+
+#   #- name: autoremove orphan packages (debian and ubuntu)
+

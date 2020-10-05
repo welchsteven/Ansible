@@ -1,0 +1,143 @@
+---
+# main.yml
+- name: Include Homebrew Package List
+  include_vars:
+    file: homebrew.yml
+    name: homebrew_installed_packages
+  tags: always
+
+- name: Install programs with Default Installer
+  package:
+    name:
+      - mas
+      - python
+    state: latest
+  tags: 
+  - homebrew
+
+- name: Tap cask-drivers
+  homebrew_tap:
+    name: homebrew/cask-drivers
+    state: present
+  tags: 
+  - homebrew
+  
+- name: Install Sublime Text
+  homebrew_cask:
+    name: sublime-text
+    state: latest
+  tags: 
+  - homebrew
+
+- homebrew_cask:
+    name: zoomus
+    state: latest
+  tags: 
+  - homebrew
+
+- homebrew_cask:
+    name: 3dconnexion
+    state: latest
+  tags: 
+  - homebrew
+
+- homebrew_cask:
+    name: steam
+    state: present
+  tags: 
+  - homebrew
+
+- name: Get Login Items
+  shell: osascript -e 'tell application "System Events" to get login items'
+  register: login_items
+  tags:
+  - homebrew
+
+- name: Disable Steam open on startup
+  shell: osascript -e 'tell application "System Events" to delete login item "Steam"'
+  register: terminal_theme
+  when: '"Steam" is in login_items.stdout'
+  changed_when: false
+  tags: 
+  - homebrew
+
+- homebrew_cask:
+    name: battle-net
+    state: present
+  tags: 
+  - homebrew
+
+- name: Disable battle-net open on startup
+  shell: osascript -e 'tell application "System Events" to delete login item "Battle.net"'
+  register: terminal_theme
+  when: '"Battle.net" is in login_items.stdout'
+  changed_when: false
+  tags: 
+  - homebrew
+
+- homebrew_cask:
+    name: 1password-cli
+    state: latest
+  tags: 
+    - homebrew
+
+- homebrew_cask:
+    name: Skype
+    state: latest
+  tags: 
+    - homebrew
+
+- homebrew_cask:
+    name: NightOwl
+    state: latest
+  tags: 
+    - homebrew
+
+# - pip:
+#     name: pexpect
+#   tags: op
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+# - name: Sign in to 1Password
+#   expect: 
+#     command: op signin my.1password.com welchsteven@gmail.com "{{ op_secret }}"
+#     responses:
+#       (?i)password: "{{ op_password }}"
+#   tags: op
+
+- import_role:
+        name: geerlingguy.mas
+  when: mas_installed_apps
+  tags: mas
+
+- osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: true
+    state: present
+  tags: settings
+
+
+- osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: true
+    state: present
+  tags: settings  
+
+- name: Create Symbolic Link for Development Folder
+  file:
+    src: "~/Library/Mobile\ Documents/com~apple~CloudDocs/Development"
+    dest: '/Users/steven/Development'
+    state: link
+  tags: settings
+
+# - name: Zoom settings
+# - name: calendar settings
+# - name: Slack Settings
+# - mac settings
+# - dock
+# - power
+# - desktops

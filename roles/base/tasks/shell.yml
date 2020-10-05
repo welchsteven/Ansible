@@ -1,0 +1,96 @@
+- name: Install programs with Default Installer
+  package:
+    name:
+      - fish
+      - tmux
+      - htop
+      - iotop
+      - glances
+
+- name: Get Current Shells
+  shell: cat /etc/shells
+  register: shells
+  changed_when: false
+  tags: 
+  - shell
+
+- name: Add fish to shells
+  command: echo /usr/local/bin/fish | sudo tee -a /etc/shells
+  when: "'/usr/local/bin/fish' is not in shells.stdout"
+  tags: 
+  - shell
+
+- name: change user shell to Fish 
+  become: yes
+  user:
+    name: steven
+    shell: /usr/local/bin/fish
+  tags: 
+  - shell
+
+# - name: Install OMF
+#   shell: curl -L https://get.oh-my.fish | fish
+#   tags: 
+#   - shell
+
+# set -g theme_nerd_fonts yes
+
+- name: Checkout nerd-fonts From Github Using Ansible. 
+  git: 
+    repo: 'https://github.com/ryanoasis/nerd-fonts.git'
+    depth: 1
+    dest: /tmp/nerd-fonts
+    force: yes
+  tags:
+    - shell
+
+- name: Ansible check file exists example.
+  stat:
+    path: "/Users/{{ ansible_user }}/Library/Fonts/NerdFonts/"
+  register: nerd_fonts_installed
+  tags:
+  - shell
+
+- name: Install Nerd-fonts
+  command:  /tmp/nerd-fonts/install.sh
+  when: not nerd_fonts_installed.stat.exists
+  tags: 
+  - shell
+
+- name: Checkout Solarized From Github Using Ansible. 
+  git: 
+    repo: 'https://github.com/altercation/solarized.git'
+    dest: /tmp/solarized
+  tags: 
+  - shell
+
+- name: Get current Terminal profile.
+  shell: defaults read com.apple.Terminal 'Default Window Settings'
+  register: terminal_theme
+  changed_when: false
+  tags: 
+  - shell
+
+- name: Ensure Solarized Dark Terminal profile is added.
+  shell: open /tmp/solarized/osx-terminal.app-colors-solarized/xterm-256color/Solarized\ Dark\ xterm-256color.terminal
+  changed_when: false
+  when: "'Solarized Dark xterm-256color' not in terminal_theme.stdout"
+  tags: 
+  - shell
+
+- name: Ensure Solarized Light Terminal profile is added.
+  shell: open /tmp/solarized/osx-terminal.app-colors-solarized/xterm-256color/Solarized\ Light\ xterm-256color.terminal
+  changed_when: false
+  when: "'Solarized Dark xterm-256color' not in terminal_theme.stdout"
+  tags: 
+  - shell
+
+- name: Ensure custom Terminal profile is set as default.
+  shell: "{{ item }}"
+  with_items:
+    - defaults write com.apple.Terminal 'Default Window Settings' -string 'Solarized Dark xterm-256color'
+    - defaults write com.apple.Terminal 'Startup Window Settings' -string 'Solarized Dark xterm-256color'
+  changed_when: false
+  when: "'Solarized Dark xterm-256color' not in terminal_theme.stdout"
+  tags: 
+  - shell
