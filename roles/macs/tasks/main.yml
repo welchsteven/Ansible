@@ -11,6 +11,36 @@
     name:
       - mas
       - python
+      #- firefox
+      - vagrant
+      - virtualbox
+      - git-lfs
+
+
+      # git lfs install
+      # git lfs install --system
+
+    state: present
+  tags: 
+  - homebrew
+
+- name: Install Docker
+  homebrew_cask:
+    name: docker
+    state: latest
+  tags: 
+  - homebrew
+
+- name: Install Google Drive
+  homebrew_cask:
+    name: google-backup-and-sync
+    state: latest
+  tags: 
+  - homebrew
+
+- name: Install Discord
+  homebrew_cask:
+    name: discord
     state: latest
   tags: 
   - homebrew
@@ -25,6 +55,20 @@
 - name: Install Sublime Text
   homebrew_cask:
     name: sublime-text
+    state: present
+  tags: 
+  - homebrew
+
+- name: Install Real VNC Viewer
+  homebrew_cask:
+    name:  vnc-viewer
+    state: latest
+  tags: 
+  - homebrew
+
+- name: Install balenaEtcher
+  homebrew_cask:
+    name:  balenaetcher
     state: latest
   tags: 
   - homebrew
@@ -93,6 +137,26 @@
   tags: 
     - homebrew
 
+- name: Install Creative Cloud
+  homebrew_cask:
+    name: adobe-creative-cloud
+    state: latest
+  tags: 
+    - workstation
+
+- homebrew_cask:
+    name: eagle
+    state: latest
+  tags: 
+    - Engineering
+
+- name: Install Sublime Text
+  homebrew_cask:
+    name: autodesk-fusion360
+    state: latest
+  tags: 
+  - Engineering
+
 # - pip:
 #     name: pexpect
 #   tags: op
@@ -111,17 +175,26 @@
   tags: mas
 
 - osx_defaults:
-    domain: com.apple.Safari
-    key: IncludeInternalDebugMenu
+    domain: com.apple.Finder
+    key: ShowPathbar
     type: bool
     value: true
     state: present
   tags: settings
 
+#defaults write ~/library/containers/com.apple.safari/data/library/preferences/com.apple.safari.plist
 
 - osx_defaults:
-    domain: com.apple.Safari
-    key: IncludeInternalDebugMenu
+    domain: com.apple.Finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+    state: present
+  tags: settings  
+
+- osx_defaults:
+    domain: com.apple.Finder
+    key: ShowTabBar
     type: bool
     value: true
     state: present
@@ -141,3 +214,10 @@
 # - dock
 # - power
 # - desktops
+
+
+# brew install --cask hazel
+
+
+brew install --cask visual-studio-code
+brew install --cask gitkraken

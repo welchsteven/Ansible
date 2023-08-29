@@ -1,6 +1,6 @@
 ---
 #mas_apps.yml
-
+#- {id: , name: ""}
 mas_email: "welchsteven@icloud.com"
 mas_password: ""
 mas_upgrade_all_apps: true
@@ -19,4 +19,11 @@ mas_installed_apps:
 - {id: 1176895641, name: "Spark Mail"}
 - {id: 1287445660, name: "Agenda"}
 - {id: 823766827, name: "Microsoft OneDrive"}
-
+- {id: 1295203466, name: "Microsoft Remote Desktop"}
+- {id: 1091189122, name: "Bear"}
+- {id: 1346203938, name: "Omnifocus 3"}
+- {id: 1142578753, name: "Omnigraffle"}
+- {id: 1289197285, name: "Mindnode"}
+- {id: 441258766, name: "Magnet"}
+- {id: 288545208, name: "Instapaper"}
+- {id: 1481302432, name: "Instapaper Save"}

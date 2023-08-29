@@ -1,5 +1,6 @@
 # Ansible
 
+I use this repository to manage the configuration of my personal systems. 
 ansible.cfg
 group_vars/
 hosts
