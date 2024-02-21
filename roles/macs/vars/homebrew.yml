@@ -1,4 +1,118 @@
 ---
 homebrew_installed_packages:
   - mas
-  - 
+  - gitkraken
+  - visual-studio-code
+  - hazel
+  - Docker
+  - nvm
+  - pyenv
+  - bear
+  
+  # - autoconf
+  # - bash-completion
+  # - doxygen
+  # - gettext
+  # - gifsicle
+  # - git
+  # - gh
+  # - go
+  # - gpg
+  # - httpie
+  # - iperf
+  # - libevent
+  # - sqlite
+  # - nmap
+  # - node
+  # - nvm
+  # - php
+  # - ssh-copy-id
+  # - cowsay
+  # - readline
+  # - openssl
+  # - pv
+  # - wget
+  # - wrk
+  # - zsh-history-substring-search
+
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - warp
+  - iPassword
+  - chromedriver
+  - docker
+  - dropbox
+  - firefox
+  - google-chrome
+  - handbrake
+  - licecap
+  - sequel-ace
+  - slack
+  - sublime-text
+  - transmit
+  - iPassword
+  - playonmac
+  - microsoft-remote-desktop
+  - discord
+  - zoom
+
+  #   - autoconf
+  # - bash-completion
+  # - gettext
+  # - sqlite
+  # - ssh-copy-id
+  # - cowsay
+  # - readline
+  # - pv
+  # - wget
+  # - wrk
+
+
+
+  # - python
+  # - firefox
+  # - vagrant
+  # - virtualbox
+  # - git-lfs
+  # - google-backup-and-sync
+  # - discord
+  # - sublime-text
+  # - vnc-viewer
+  # - balenaetcher
+  # - zoomus
+  # - 3dconnexion
+  # - steam
+  # - battle-net
+  # - 1password-cli
+  # - Skype
+  # - adobe-creative-cloud
+  # - eagle
+  # - autodesk-fusion360
+  # - 
+  # - 
+  # - 
+  # - 
+  # - 
+
+
+#  arduino-cli
+#        avr-gcc
+#        dfu-programmer
+#        avrdude
+
+
+#     git
+#     git-lfs
+#     hubflow
+#     docker
+#     vagrant
+
+
+#       certbot
+#       fish
+
+#       gnuradio
+#       wget
+#       tmux
+# chirp

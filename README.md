@@ -21,103 +21,27 @@ config files, user account
 * https://opensource.com/article/18/3/manage-workstation-ansible
 
 
-#  arduino-cli
-#        avr-gcc
-#        dfu-programmer
-#        avrdude
-
-
-#     git
-#     git-lfs
-#     hubflow
-#     docker
-#     vagrant
-
-
-#       certbot
-#       fish
-
-#       gnuradio
-#       wget
-#       tmux
-    # - { id: 411643860, name: "DaisyDisk (4.3.2)" }
-    # - { id: 498486288, name: "Quick Resizer (1.9)" }
-    # - { id: 497799835, name: "Xcode (8.1)" }
-    # mas_installed_apps:
-    # - { id: 497799835, name: "Xcode (8.1)" }
-    # - { id: 1179399529,name: Desk 3 (3.1) }
-    # - { id: 1333542190,name: 1Password 7 (7.6) }
-    # - { id: 1462114288,name: Grammarly for Safari (9.17) }
-    # - { id: 1289197285,name: MindNode (7.3.1) }
-    # - { id: 497799835,name: Xcode (11.5) }
-    # - { id: 425264550,name: Disk Speed Test (3.2) }
-    # - { id: 1466185689,name: Blackmagic RAW Speed Test (1.4.2) }
-    # - { id: 1335413823,name: Ka-Block! (3.3) }
-    # - { id: 412558550,name: Swackett (5.1.0) }
-    # - { id: 924726344,name: Deliveries (3.2.3) }
-    # - { id: 982710545,name: Forecast Bar (5.5.1) }
-    # - { id: 973134470,name: Be Focused (2.0) }
-    # - { id: 1472777122,name: Honey (11.11.2) }
-    # - { id: 1176895641,name: Spark (2.8.1) }
-    # - { id: 441258766,name: Magnet (2.4.5) }
-    # - { id: 611021963,name: SerialTools (1.32) }
-    # - { id: 506189836,name: Harvest (2.2.3) }
-    # - { id: 1287445660,name: Agenda (10.0.4) }
-    # - { id: 425424353,name: The Unarchiver (4.2.2) }
-    # - { id: 755734899,name: Weather Live Free (1.9) }
-    # - { id: 1454269192,name: Downlink (2.1.1) }
-    # - { id: 823766827,name: OneDrive (20.084.0426) }
-    # - { id: 409201541,name: Pages (10.1) }
-    # - { id: 1055511498,name: Day One (4.15.2) }
-    # - { id: 803453959,name: Slack (4.7.0) }
-    # - { id: 863486266,name: SketchBook (8.7.0) }
-    # - { id: 1481302432,name: Instapaper (1.1) }
-    # - { id: 500154009,name: Bitdefender Virus Scanner (3.15) }
-    # - { id: 406056744,name: Evernote (7.14) }
-    # - { id: 411643860,name: DaisyDisk (4.10) }
-    # - { id: 992076693,name: MindNode (2.5.8) }
-    # - { id: 409203825,name: Numbers (10.1) }
-    # - { id: 430798174,name: HazeOver (1.8.6) }
-    # - { id: 877615577,name: Serial (1.4.5) }
-    # - { id: 409183694,name: Keynote (10.1) }
-    # - { id: 1091189122,name: Bear (1.7.13) }
-
-
 # 1Password 7.app
 # 3Dconnexion
 # Adobe Acrobat DC
 # Adobe Creative Cloud
-# Adobe Illustrator 2020
-# Adobe Illustrator CC 2019
-# Adobe InDesign 2020
-# Adobe InDesign CC 2019
-# Adobe Photoshop 2020
-# Adobe Photoshop CC 2019
 # Agenda.app
-# Angry IP Scanner.app
 # AnyList.app
-# AppCleaner.app
 # Arduino.app
-# Atom.app
-# Audacity.app
-# Autodesk
-# Backblaze.app
-# Backup and Sync.app
-# Bartender 3.app
-# Basecamp 3.app
+
 # Battle.net.app
-# Be Focused.app
 # Bear.app
+
 # BitdefenderVirusScanner.app
-# Blackmagic Disk Speed Test.app
-# Blackmagic RAW Speed Test.app
-# CHIRP.app
-# COMSOL54
+
+
+
 # Camtasia 2018.app
 # Canon Utilities
-# Cisco
+
+
 # CodeKit.app
-# CubicSDR.app
+
 # DB Browser for SQLite.app
 # DStar2.db
 # DYMO Label.app

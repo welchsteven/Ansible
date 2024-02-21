@@ -13,4 +13,3 @@ else
    echo "Link Missing: Installing Link"
    ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Development ~/
 fi
-

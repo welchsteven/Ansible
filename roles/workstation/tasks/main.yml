@@ -1,8 +1,7 @@
-
-- name: Install programs with Default Installer
-  package:
-    name:
-      - cmake
-    state: latest
-  tags: 
-  - development
+# - name: Install programs with Default Installer
+#   package:
+#     name:
+#       - cmake
+#     state: latest
+#   tags: 
+#   - development

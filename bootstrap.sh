@@ -8,17 +8,17 @@
 #!/usr/bin/env bash
 # manually enable remote access
 
-/bin/bash Development.sh
+# /bin/bash Development.sh
 
-if [ -d "$HOME/.ssh/" ]; then
-	echo "SSH Keys already installed"
-else
-	echo "Installing SSH Keys"
-	mkdir ~/.ssh
-	cp SSH\ Defaults/* ~/.ssh/
-	chmod 700 ~/.ssh
-	chmod 600 ~/.ssh/*
-fi
+# if [ -d "$HOME/.ssh/" ]; then
+# 	echo "SSH Keys already installed"
+# else
+# 	echo "Installing SSH Keys"
+# 	mkdir ~/.ssh
+# 	cp SSH\ Defaults/* ~/.ssh/
+# 	chmod 700 ~/.ssh
+# 	chmod 600 ~/.ssh/*
+# fi
 
 # Check for Xcode Command Line Tools
 xcode-select -p 1>/dev/null
@@ -57,13 +57,15 @@ else
 	    echo "Ansible Installed"
 fi
 
-# Check for ansible
-which -s ansible
-if [[ $? != 0 ]] ; then
-	echo "Ansible not found: Installing Ansible"
-	brew install ansible
-else
-	    echo "Ansible Installed"
-fi
+# # Check for ansible
+# which -s ansible
+# if [[ $? != 0 ]] ; then
+# 	echo "Ansible not found: Installing Ansible"
+# 	brew install ansible
+# else
+# 	    echo "Ansible Installed"
+# fi
 
-#ansible pull git@github.com:welchsteven/Ansible.git
+# ansible pull git@github.com:welchsteven/Ansible.git
+mkdir ~/Development
+git clone git@github.com:welchsteven/Ansible.git

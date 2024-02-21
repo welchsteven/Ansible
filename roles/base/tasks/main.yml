@@ -1,2 +1,10 @@
 - name: Include task list in play
   import_tasks: shell.yml
+
+  - name: Install programs with Default Installer
+  package:
+    name:
+      - tmux
+      - htop
+      - iotop
+      - glances
